@@ -7,7 +7,6 @@ import pages.RegistrationPage;
 import static pages.RegistrationPage.*;
 
 public class RegistrationTest extends TestBase {
-    //создали экземпляр страницы и к ней же обращаемся
     RegistrationPage registrationPage = new RegistrationPage();
 
     @DisplayName("Успешная регистрация с полным набором данных")
