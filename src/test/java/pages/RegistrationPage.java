@@ -22,7 +22,6 @@ public class RegistrationPage {
     public static String stateCity = "Rajasthan";
     public static String city = "Jaipur";
 
-    //напрмяую запрещаем с этими элементами работать. Для этого есть методы взаимодействия ниже
     private final SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
@@ -39,19 +38,12 @@ public class RegistrationPage {
             submit = $("#submit"),
             modalContent = $(".modal-content") ;
 
-
-    //создаем объект класса CalendarComponent
     CalendarComponent calendarComponent = new CalendarComponent();
-    //создали объект класса ModalComponent
     RegistrationResultComponent modalComponent = new RegistrationResultComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         return this;
-        //RegistrationPage вместо void и return this - это
-        // чтобы вернулась эта же страница (объект) и чтобы не пришлось по сто раз из класса
-        //RegistrationTest к ней обращаться через переменную registrationPage
-        //return this = return new RegistrationPage();
     }
 
     public RegistrationPage setFirstName(String firstName) {
@@ -80,14 +72,11 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
-        calendarInput.click(); //находим и кликаем на календарь
-        //вызываем из класса CalendarComponent метод (установки даты) setDate
+        calendarInput.click();
         calendarComponent.setDate(day, month, year);
-        return this; //возвращаем объект RegistrationPage
+        return this;
     }
 
-    //этот метод по сути будем использователь несколько раз для проверки разных данных
-    //вынесен в отдельный компонент метод модального окна checkResult, т.к. он может встречаться не один раз
     public RegistrationPage checkResultInModal(String key, String value) {
         modalComponent.checkResult(key, value);
         return this;
@@ -139,6 +128,4 @@ public class RegistrationPage {
         modalContent.shouldNotBe();
         return this;
     }
-
-
 }
