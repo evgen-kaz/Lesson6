@@ -9,6 +9,5 @@ public class CalendarComponent {
         $(".react-datepicker__month-select").$(byText("December")).click();
         $(".react-datepicker__year-select").$(byText("1900")).click();
         $(".react-datepicker__day--003").click();
-        //возврат из него никакой не нужен. поэтому void
     }
 }
