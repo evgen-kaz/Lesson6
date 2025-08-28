@@ -82,8 +82,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage notResultInModal(String key, String value) {
-        modalComponent.notResult(key, value);
+    public RegistrationPage notResultInModal() {
+        modalComponent.notResult();
         return this;
     }
 
