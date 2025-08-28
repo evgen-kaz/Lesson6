@@ -40,7 +40,7 @@ public class RegistrationTest extends TestBase {
 
     @DisplayName("Успешная регистрация с минимальным набором данных")
     @Test
-    void successfulRegistrationOnWithAMinimumCountOfData() {
+    void successfulRegistrationOnWithAMinimumCountOfDataTest() {
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
