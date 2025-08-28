@@ -9,7 +9,7 @@ public class RegistrationResultComponent {
         $(".table").$(byText(key)).parent().shouldHave(text(value));
     }
 
-    public void notResult(String key, String value) {
+    public void notResult() {
         $(".table").shouldNotBe();
     }
 }
